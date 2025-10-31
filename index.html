@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Attendance Sheet Generator</title>
+  <link rel="stylesheet" href="style.css"/>
+  <meta name="description" content="Generate printable class attendance sheets for any month—entirely client-side."/>
+</head>
+<body>
+  <header class="container">
+    <h1>📋 Attendance Sheet Generator</h1>
+    <p class="muted">Paste student names, pick a month, and generate a printable sheet. No login. No server.</p>
+  </header>
+
+  <main class="container card">
+    <section class="grid">
+      <div>
+        <label>Class / Section</label>
+        <input id="className" type="text" placeholder="e.g., Grade 6 – A"/>
+      </div>
+      <div>
+        <label>Teacher Name</label>
+        <input id="teacherName" type="text" placeholder="e.g., Mrs. Rao"/>
+      </div>
+      <div>
+        <label>Month</label>
+        <select id="month"></select>
+      </div>
+      <div>
+        <label>Year</label>
+        <input id="year" type="number" min="2000" max="2100" />
+      </div>
+      <div class="full">
+        <label>Student Names (one per line)</label>
+        <textarea id="students" rows="8" placeholder="Aarav Sharma
+Anaya Gupta
+Kabir Singh"></textarea>
+      </div>
+      <div class="row">
+        <label class="checkbox">
+          <input id="hideWeekends" type="checkbox" />
+          Hide weekends
+        </label>
+        <label class="checkbox">
+          <input id="markGrid" type="checkbox" />
+          Show small tick/absent controls
+        </label>
+      </div>
+    </section>
+
+    <div class="actions">
+      <button id="generate">Generate</button>
+      <button id="downloadCsv" disabled>Download CSV</button>
+      <button id="printBtn" disabled>Print / Save PDF</button>
+    </div>
+
+    <section id="meta" class="meta"></section>
+    <section id="tableWrap" class="table-wrap"></section>
+
+    <p class="tips muted">
+      Tips: Press <kbd>G</kbd> to Generate, <kbd>D</kbd> to Download CSV, <kbd>P</kbd> to Print.  
+      Click a cell to toggle ✓ / ✗ / blank (if “Show controls” is on).
+    </p>
+  </main>
+
+  <footer class="container muted">
+    <small>Made with ♥ — Static, privacy-safe. MIT License.</small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
