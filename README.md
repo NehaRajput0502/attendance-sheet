@@ -23,3 +23,20 @@ Why it’s good: Useful for schools, zero backend, showcases clean code & UX.
 Just open `index.html` in your browser, or use any static server:
 ```bash
 npx serve .
+How to publish in 2 minutes
+
+Create repo
+
+mkdir attendance-sheet && cd attendance-sheet
+# add the files above
+git init
+git add .
+git commit -m "feat: static attendance sheet generator"
+git branch -M main
+git remote add origin https://github.com/<you>/attendance-sheet.git
+git push -u origin main
+
+
+Enable GitHub Pages
+Repo → Settings → Pages → Source: main (root) → Save.
+URL appears in a few seconds.
